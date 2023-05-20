@@ -23,7 +23,8 @@ const CuentasListContainer = () => {
 
   return (
     <>  
-        <h1>Aca estan las cuentas</h1>
+        <p>Consulta de Saldo</p>
+        <h1>Selecciona la Cuenta a Consultar</h1>
         <div className='botonesCuentas'>
             {cuentas.map((cuentas) => {
                 return(
