@@ -13,10 +13,8 @@ const CuentasListContainer = () => {
         .then(data => 
             {
             const {cuentas} = data
-            console.log(cuentas)
             const cuentasP = cuentas.filter((cuentas => cuentas.moneda === '$' || cuentas.moneda === 'u$s') || (cuentas => cuentas.tipo_letras === 'CC' || cuentas.tipo_letras === 'CA'))
             SetCuentas(cuentasP)
-            console.log(cuentasP)
             }
             )
     }, [])
