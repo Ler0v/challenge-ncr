@@ -1,11 +1,12 @@
-import React from 'react'
+// import React from 'react'
+// import Cuenta from './Cuenta'
 
-const CuentasList = ({cuentas}) => {
-  return (
-    <>
-          
-    </>
-  )
-}
+// const CuentasList = (cuentas) => {
+//   return (
+//     <>
+//       <Cuenta cuentas={cuentas}/>
+//     </>
+//   )
+// }
 
-export default CuentasList
+// export default CuentasList
