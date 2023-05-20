@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+  
 const Cuenta = (cuentas) => {
+  console.log(cuentas)
   return (
     <>
       <div className='CuentaDetalle'>
@@ -11,7 +13,7 @@ const Cuenta = (cuentas) => {
         <p>Numero de cuenta:{cuentas.n}</p>
       </div>
       <button><Link to='/'>Volver atras</Link></button>
-    </>
+    </> 
   )
 }
 
