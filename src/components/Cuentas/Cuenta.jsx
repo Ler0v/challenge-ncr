@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-  
+
 const Cuenta = (cuentas) => {
   console.log(cuentas)
   return (

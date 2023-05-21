@@ -1,0 +1,7 @@
+.botonesCuentas{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
