@@ -1,8 +1,6 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import cuentasReducer from './cuentasSlice'
+import  {createStore}  from 'redux';
+import cuentasReducer from './reducers';
 
-// export const store = configureStore ({
-//     reducer: {
-//         cuentas: cuentasReducer,
-//     }
-// })
+const store = createStore(cuentasReducer);
+
+export default store;

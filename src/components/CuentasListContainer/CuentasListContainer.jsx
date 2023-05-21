@@ -1,24 +1,31 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import './cuentalistcontainer.css'
+import './cuentaslistcontainer.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { setCuentas } from '../../redux/actions';
 
 const CuentasListContainer = () => {
 
     const API_URL = 'https://api.npoint.io/97d89162575a9d816661'
-    const [cuentas, SetCuentas] = useState([])
+    // const [cuentas, SetCuentas] = useState([])
+    const dispatch = useDispatch();
+    const cuentas = useSelector((state) => state);
 
     useEffect(()=>{
         fetch(API_URL)
         .then(res => res.json())
-        .then(data => 
-            {
-            const {cuentas} = data
-            const cuentasP = cuentas.filter((cuentas => cuentas.moneda === '$' || cuentas.moneda === 'u$s') || (cuentas => cuentas.tipo_letras === 'CC' || cuentas.tipo_letras === 'CA'))
-            SetCuentas(cuentasP)
-            }
+        .then((data) => {
+            const { cuentas } = data;
+            const cuentasFiltradas = cuentas.filter(
+            (cuentas) =>
+                (cuentas.monedas === '$' || cuentas.moneda === 'u$s') ||
+                (cuentas.tipo_letras === 'CC' || cuentas.tipo_letras === 'CA')
+            );
+            dispatch(setCuentas(cuentasFiltradas));
+        }
             )
-    }, [])
+    }, [dispatch])
 
 
   return (
