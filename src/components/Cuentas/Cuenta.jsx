@@ -10,9 +10,9 @@ const Cuenta = () => {
     <>
       <div className='CuentaDetalle'>
         <h1>Detalles de la cuenta</h1>
-        <p>Saldo disponible:{cuenta.saldo}</p>
-        <p>Tipo de cuenta:{cuenta.tipo_letras}</p>
-        <p>Numero de cuenta:{cuenta.n}</p>
+        <p>Saldo disponible:  {cuenta.moneda} {cuenta.saldo}</p>
+        <p>Tipo de cuenta: {cuenta.tipo_letras}</p>
+        <p>Numero de cuenta: {cuenta.n}</p>
       </div>
       <Link to='/'><button className='botonCuenta'>Volver atras</button></Link>
     </> 
