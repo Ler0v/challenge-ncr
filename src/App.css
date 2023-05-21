@@ -1,7 +1,7 @@
 #root{
   background-color: #f0f0f0;
-  width: 1000px;
-  height: 768px;
+  width: 800px;
+  height: 600px;
   font-family: 'Segoe UI';
   display: flex;
   flex-direction: column;
@@ -9,26 +9,3 @@
   align-items: center;
   margin: auto;
 }
-
-.botonesCuentas{
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.botonCuenta{
-  width: 200px;
-  height: 100px;
-  color: #fff;
-  background-color: #26e052;
-  border: solid 1px #fff;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.botonCuenta:hover{
-  opacity: .7;
-}
-

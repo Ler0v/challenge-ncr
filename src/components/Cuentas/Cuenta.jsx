@@ -14,7 +14,7 @@ const Cuenta = () => {
         <p>Tipo de cuenta:{cuenta.tipo_letras}</p>
         <p>Numero de cuenta:{cuenta.n}</p>
       </div>
-      <button><Link to='/'>Volver atras</Link></button>
+      <Link to='/'><button className='botonCuenta'>Volver atras</button></Link>
     </> 
   )
 }

@@ -32,9 +32,7 @@ const CuentasListContainer = () => {
             {cuentas.map((cuentas) => {
                 return(
                     <div key={cuentas.id} >
-                        <button>
-                            <Link to='cuenta'>{cuentas.tipo_letras}<br />{cuentas.n}</Link>
-                        </button>
+                        <Link to='cuenta'><button>{cuentas.tipo_letras}<br />{cuentas.n}</button></Link>
                     </div>
                 )
             })}
