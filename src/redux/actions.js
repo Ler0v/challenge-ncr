@@ -1,4 +1,4 @@
-export const setCuentas = (cuentas) => ({
+export const setCuentas = (cuenta) => ({
     type: 'SET_CUENTAS',
-    payload: cuentas,
+    payload: cuenta,
   });

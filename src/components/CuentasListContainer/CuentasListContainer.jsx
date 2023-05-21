@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './cuentaslistcontainer.css'
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,12 +17,8 @@ const CuentasListContainer = () => {
         .then(res => res.json())
         .then((data) => {
             const { cuentas } = data;
-            const cuentasFiltradas = cuentas.filter(
-            (cuentas) =>
-                (cuentas.monedas === '$' || cuentas.moneda === 'u$s') ||
-                (cuentas.tipo_letras === 'CC' || cuentas.tipo_letras === 'CA')
-            );
-            dispatch(setCuentas(cuentasFiltradas));
+            const cuentasP = cuentas.filter((cuenta => cuenta.moneda === '$' || cuenta.moneda === 'u$s') || (cuenta => cuenta.tipo_letras === 'CA' || cuenta.tipo_letras === 'CC'))	
+            dispatch(setCuentas(cuentasP));
         }
             )
     }, [dispatch])
