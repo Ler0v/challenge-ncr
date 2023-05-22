@@ -1,11 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import './cuenta.css'
 
 
 const Cuenta = () => {
-  const cuenta = useSelector((state) => state[0]);
+  
+  // const cuenta = useSelector((state) => state[2]);
+
+  const { numeroCuenta } = useParams();
+  const cuentas = useSelector((state) => state);
+  const cuenta = cuentas.find((cuenta) => cuenta.n === numeroCuenta);
+  
+  if (!cuenta) {
+    return <p>Cuenta no encontrada</p>;
+  }
+
+
+
   return (
     <>
       <div className='CuentaDetalle'>
