@@ -23,6 +23,15 @@ const CuentasListContainer = () => {
             )
     }, [dispatch])
 
+    const obtenerNombreTipoCuenta = tipo => {
+        if (tipo === 'CC') {
+          return 'Cuenta Corriente';
+        } else if (tipo === 'CA') {
+          return 'Caja de Ahorros';
+        }
+        return '';
+      };
+
 
   return (
     <>  
@@ -32,7 +41,7 @@ const CuentasListContainer = () => {
             {cuentas.map((cuentas) => {
                 return(
                     <div key={cuentas.id} >
-                        <Link to='cuenta'><button>{cuentas.tipo_letras}<br />{cuentas.n}</button></Link>
+                        <Link to='cuenta'><button>{obtenerNombreTipoCuenta(cuentas.tipo_letras)}<br />{cuentas.n}</button></Link>
                     </div>
                 )
             })}
