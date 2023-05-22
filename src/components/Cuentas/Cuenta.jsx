@@ -7,8 +7,6 @@ import './cuenta.css'
 
 const Cuenta = () => {
   
-  // const cuenta = useSelector((state) => state[2]);
-
   const { numeroCuenta } = useParams();
   const cuentas = useSelector((state) => state);
   const cuenta = cuentas.find((cuenta) => cuenta.n === numeroCuenta);

@@ -21,7 +21,7 @@ const CuentasListContainer = () => {
         .then(res => res.json())
         .then((data) => {
             const { cuentas } = data;
-            const cuentasP = cuentas.filter((cuenta => cuenta.moneda === '$' || cuenta.moneda === 'u$s') || (cuenta => cuenta.tipo_letras === 'CA' || cuenta.tipo_letras === 'CC' || cuenta.tipo_letras === 'Cc'))	
+            const cuentasP = cuentas.filter((cuenta => cuenta.moneda === '$' || cuenta.moneda === 'u$s') || (cuenta => cuenta.tipo_letras === 'CA' && cuenta.tipo_letras === 'CC' || cuenta.tipo_letras === 'Cc'))	
             dispatch(setCuentas(cuentasP));
         }
             )
@@ -36,7 +36,7 @@ const CuentasListContainer = () => {
     
 
     const obtenerNombreTipoCuenta = tipo => {
-        if (tipo === 'Cc' || tipo === 'CC') {
+        if (tipo === 'CC') {
           return 'Cuenta Corriente';
         } else if (tipo === 'CA') {
           return 'Caja de Ahorros';
@@ -61,7 +61,7 @@ const CuentasListContainer = () => {
             {currentAccounts.map((cuentas, index) => {
                 return(
                     <div key={index}>
-                        <Link to='cuenta'><button>{obtenerNombreTipoCuenta(cuentas.tipo_letras)}<br />{cuentas.n}</button></Link>
+                        <Link to={'cuenta/' + cuentas.n}><button>{obtenerNombreTipoCuenta(cuentas.tipo_letras)}<br />{cuentas.n}</button></Link>
                     </div>
                 )
             })}

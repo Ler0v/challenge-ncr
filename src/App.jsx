@@ -10,7 +10,7 @@ function App() {
        <BrowserRouter>
         <Routes>
           <Route path='/' element={<CuentasListContainer />} />
-          <Route path='/cuenta' element={<Cuenta />} />
+          <Route path='/cuenta/:numeroCuenta' element={<Cuenta />} />
         </Routes>
       </BrowserRouter>
   )
