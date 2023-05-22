@@ -9,3 +9,15 @@
   align-items: center;
   margin: auto;
 }
+
+.botonPrev{
+  position: absolute;
+  top: 42.5%; 
+  left: 60%;
+}
+
+.botonNext{
+  position: absolute;
+  top: 42.5%; 
+  left: 32%;
+}

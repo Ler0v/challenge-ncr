@@ -67,10 +67,10 @@ const CuentasListContainer = () => {
             })}
         </div>
         {cuentas.length > indexOfLastAccount && (
-        <button onClick={nextPage}>{"Mas Opciones >>"}</button>
+        <button className='botonNext' onClick={nextPage}>{"Mas Opciones >>"}</button>
       )}
       {currentPage > 1 && (
-          <button onClick={prevPage}>{"<< Opciones Anteriores"}</button>
+          <button className='botonPrev' onClick={prevPage}>{"<< Opciones Anteriores"}</button>
         )}
     </>
   )
