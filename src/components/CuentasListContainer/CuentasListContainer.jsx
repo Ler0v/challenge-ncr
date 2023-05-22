@@ -21,7 +21,7 @@ const CuentasListContainer = () => {
         .then(res => res.json())
         .then((data) => {
             const { cuentas } = data;
-            const cuentasP = cuentas.filter((cuenta => cuenta.moneda === '$' || cuenta.moneda === 'u$s') || (cuenta => cuenta.tipo_letras === 'CA' && cuenta.tipo_letras === 'CC' || cuenta.tipo_letras === 'Cc'))	
+            const cuentasP = cuentas.filter((cuenta => cuenta.moneda === '$' || cuenta.moneda === 'u$s') || (cuenta => cuenta.tipo_letras === 'CA' || cuenta.tipo_letras === 'CC' || cuenta.tipo_letras === 'Cc'))	
             dispatch(setCuentas(cuentasP));
         }
             )
@@ -41,6 +41,9 @@ const CuentasListContainer = () => {
         } else if (tipo === 'CA') {
           return 'Caja de Ahorros';
         }
+        else if (tipo === 'Cc') {
+            return 'Cuenta Corriente';
+          }
         return '';
       };
 
